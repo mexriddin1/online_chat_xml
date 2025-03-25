@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/main_bg">
+
+
+    <FrameLayout
+        android:id="@+id/cardView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        tools:ignore="MissingConstraints">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            app:cardCornerRadius="25dp">
+
+            <ImageView
+                android:id="@+id/user_img"
+                android:layout_width="match_parent"
+                android:src="@drawable/ic_acount"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/user_online"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="8dp"
+            android:translationZ="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView"
+            app:layout_constraintEnd_toEndOf="@+id/cardView" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/medium"
+        android:maxWidth="200dp"
+        android:maxLines="1"
+        android:textColor="#fff"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.5"
+        tools:text="Mexriddin Odilov" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="70dp"
+        android:background="#2C2A2A"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

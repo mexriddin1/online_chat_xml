@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        tools:layout="@layout/screen_register"
+        android:id="@+id/registerScreen"
+        android:name="com.example.chatapponline.presenter.screen.auth.register.RegisterScreen"
+        android:label="RegisterScreen" >
+        <action
+            android:id="@+id/action_registerScreen_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chatScreen"
+        tools:layout="@layout/screen_chat"
+        android:name="com.example.chatapponline.presenter.screen.chat.ChatScreen"
+        android:label="ChatScreen" >
+        <argument
+            android:name="userEmail"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainScreen"
+        tools:layout="@layout/screen_user"
+        android:name="com.example.chatapponline.presenter.screen.main.MainScreen"
+        android:label="MainScreen" >
+        <action
+            android:id="@+id/to_chatScreen"
+            app:destination="@id/chatScreen" />
+        <action
+            android:id="@+id/action_mainScreen_to_profileDialog"
+            app:destination="@id/profileDialog" />
+        <argument
+            android:name="changedUserData"
+            app:argType="com.example.chatapponline.sourse.data_class.User" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginScreen"
+        tools:layout="@layout/screen_login"
+        android:name="com.example.chatapponline.presenter.screen.auth.login.LoginScreen"
+        android:label="LoginScreen" >
+        <action
+            android:id="@+id/action_loginScreen_to_registerScreen"
+            app:destination="@id/registerScreen" />
+        <action
+            android:id="@+id/action_loginScreen_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/splashScreen"
+        tools:layout="@layout/splash_screen"
+        android:name="com.example.chatapponline.presenter.screen.splash.SplashScreen"
+        android:label="SplashScreen" >
+        <action
+            android:id="@+id/action_splashScreen_to_loginScreen"
+            app:destination="@id/loginScreen" />
+        <action
+            android:id="@+id/action_splashScreen_to_mainScreen"
+            app:destination="@id/mainScreen" />
+    </fragment>
+    <dialog
+        android:id="@+id/profileDialog"
+        tools:layout="@layout/dialog_update_user"
+        android:name="com.example.chatapponline.presenter.screen.dialogs.ProfileDialog"
+        android:label="ProfileDialog" >
+        <action
+            android:id="@+id/action_profileDialog_to_mainScreen"
+            app:destination="@id/mainScreen" />
+        <argument
+            android:name="userData"
+            app:argType="com.example.chatapponline.sourse.data_class.User" />
+    </dialog>
+</navigation>

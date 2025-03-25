@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Chat app</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="message">Message</string>
+    <string name="register_google">Continue with Google</string>
+    <string name="yoki">Or</string>
+    <string name="registratisya">Sign in</string>
+    <string name="email">Email</string>
+    <string name="ro_yxatdan_o_tish">Register</string>
+    <string name="default_web_client_id">386216648729-m41f8qec9asrr1uhegcfbkfmo8leo42g.apps.googleusercontent.com</string>
+    <string name="notAccount"> First time in here <u>Create account</u></string>
+</resources>
